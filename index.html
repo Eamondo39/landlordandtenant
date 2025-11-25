@@ -1,0 +1,72 @@
+<script>
+function saveContent() {
+  const boxes = document.querySelectorAll('.box');
+  let data = '';
+  boxes.forEach((box, i) => {
+    data += `Box ${i+1}:\n${box.innerHTML}\n\n`;
+  });
+  const blob = new Blob([data], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'content.txt';
+  a.click();
+  URL.revokeObjectURL(url);
+  alert('Content saved!');
+}
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Landlord & Tenant - Home</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="site-wrapper">
+
+  <div class="sidebar">
+    <h2>Landlord & Tenant</h2>
+    <a href="index.html" class="active">Home</a>
+    <a href="landlord.html">Landlord</a>
+    <a href="tenant.html">Tenant</a>
+    <a href="property-law.html">Property Law</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <main class="main">
+    <button class="save-btn" onclick="saveContent()">Save</button>
+
+    <div class="box" contenteditable="true">
+      <h1>Welcome to Landlord & Tenant Resources</h1>
+      <p>This website provides general insight into landlord and tenant matters, property law, and surveying for commercial properties. You can edit content directly in the boxes for easy updates.</p>
+    </div>
+
+    <div class="box" contenteditable="true">
+      <h2>Our Services</h2>
+      <p>We provide information, guidance, and templates for landlords, tenants, and property professionals navigating commercial leases, dilapidations, assignments, and lease renewals.</p>
+    </div>
+
+  </main>
+</div>
+<script>
+function saveContent() {
+  const boxes = document.querySelectorAll('.box');
+  let data = '';
+  boxes.forEach((box, i) => {
+    data += `Box ${i+1}:\n${box.innerHTML}\n\n`;
+  });
+  const blob = new Blob([data], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'index-content.txt';
+  a.click();
+  URL.revokeObjectURL(url);
+  alert('Content saved!');
+}
+</script>
+</body>
+</html>

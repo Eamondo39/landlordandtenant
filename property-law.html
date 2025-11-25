@@ -1,0 +1,103 @@
+<script>
+function saveContent() {
+  const boxes = document.querySelectorAll('.box');
+  let data = '';
+  boxes.forEach((box, i) => {
+    data += `Box ${i+1}:\n${box.innerHTML}\n\n`;
+  });
+  const blob = new Blob([data], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'content.txt';
+  a.click();
+  URL.revokeObjectURL(url);
+  alert('Content saved!');
+}
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Property Law - Landlord & Tenant</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="site-wrapper">
+
+  <div class="sidebar">
+    <h2>Landlord & Tenant</h2>
+    <a href="index.html">Home</a>
+    <a href="landlord.html">Landlord</a>
+    <a href="tenant.html">Tenant</a>
+    <a href="property-law.html" class="active">Property Law</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <main class="main">
+    <button class="save-btn" onclick="saveContent()">Save</button>
+
+    <div class="box" contenteditable="true">
+      <h1>Key Areas of Property Law Relevant to Landlord & Tenant Surveying</h1>
+      <p>Understanding the legal framework that underpins commercial landlord and tenant relationships is essential for property professionals and anyone involved in managing, owning, or occupying commercial premises...</p>
+    </div>
+
+    <div class="box" contenteditable="true">
+      <h2>1. Law of Property Act 1925 – Service of Notices and Forfeiture</h2>
+      <p>Section 62: Certain rights—such as easements—can automatically pass with the sale or grant of a lease. Landlords often exclude s.62 to avoid unintentionally granting additional rights.</p>
+      <p>Section 146: Governs service of forfeiture notices for breaches other than non-payment of rent...</p>
+      <p>Section 147: Deals with dilapidations and tenant relief in certain circumstances...</p>
+      <p>Section 196: Notices are valid if left at tenant’s last known residence/business. Recorded delivery is recommended.</p>
+    </div>
+
+    <div class="box" contenteditable="true">
+      <h2>2. Landlord and Tenant Act 1927 – Alterations, Improvements and Dilapidations</h2>
+      <p>Section 18: Caps terminal dilapidations claims to diminution in value...</p>
+      <p>Section 3: Tenant improvements require notice to the landlord; landlords have two months to respond or tenant may claim compensation...</p>
+      <p>Section 19(1)(a): Qualified covenants interpreted as fully qualified covenants; landlords cannot unreasonably withhold consent.</p>
+    </div>
+
+    <div class="box" contenteditable="true">
+      <h2>3. Landlord and Tenant Act 1954 – Security of Tenure and Lease Renewals</h2>
+      <p>Sections 24–31A govern renewal, termination, and new tenancy terms...</p>
+    </div>
+
+    <div class="box" contenteditable="true">
+      <h2>4. Landlord and Tenant Act 1988 – Assignments and Reasonableness</h2>
+      <p>Landlords must act reasonably when considering tenant requests for assignment, underletting, or other consents...</p>
+    </div>
+
+    <div class="box" contenteditable="true">
+      <h2>5. Landlord and Tenant (Covenants) Act 1995 – Post-1996 Leases</h2>
+      <p>This Act abolished privity of contract for leases granted after 1 January 1996...</p>
+    </div>
+
+    <div class="box" contenteditable="true">
+      <h2>6. Leasehold Property Repairs Act 1938 – Restrictions on Enforcement of Repairs</h2>
+      <p>Restricts landlord forfeiture for disrepair where leases are seven years or more and more than three years remain...</p>
+    </div>
+
+  </main>
+</div>
+
+<script>
+function saveContent() {
+  const boxes = document.querySelectorAll('.box');
+  let data = '';
+  boxes.forEach((box, i) => {
+    data += `Box ${i+1}:\n${box.innerHTML}\n\n`;
+  });
+  const blob = new Blob([data], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'property-law-content.txt';
+  a.click();
+  URL.revokeObjectURL(url);
+  alert('Content saved!');
+}
+</script>
+</body>
+</html>
